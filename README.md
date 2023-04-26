@@ -130,6 +130,14 @@ RootCA --|> IssuingCA
 IssuingCA --|> EndEntities
 ```
 
+## Sample Certificate Field Difference Table
+Difference among S/MIME BR sample certificates is shown in the following table:
+|Field|Mailbox|||Organization|||Sponsored|||Individual|||
+|-------|-|-|-|-|-|-|-|-|-|-|-|-|
+|Subject E|o|o|o|o|o|o|o|o|o|o|o|o|
+
+TBD.
+
 ## View Generated Certificates
 
 |Root|Intermediate|
