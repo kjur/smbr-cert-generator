@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "jsrsasign": "^10.8.3",
+    "jsrsasign-util": "^1.0.5"
+  }
+}

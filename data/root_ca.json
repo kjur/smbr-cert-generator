@@ -1,0 +1,45 @@
+{
+  "version": 3,
+  "serial": {"hex": "46ecfd70665db6feb8c13f2062c004de9c7c3cdb"},
+  "sigalg": "SHA256withECDSA",
+  "issuer": {
+    "str": "/C=US/O=Foo Industries Limited/CN=Root CA",
+    "array": [
+      [{"type": "C", "ds": "prn", "value": "US"}],
+      [{"type": "O", "ds": "utf8", "value": "Foo Industries Limited"}],
+      [{"type": "CN", "ds": "utf8", "value": "Root CA"}]
+    ]
+  },
+  "notbefore": "230401000000Z",
+  "notafter": "340401000000Z",
+  "subject": {
+    "str": "/C=US/O=Foo Industries Limited/CN=Root CA",
+    "array": [
+      [{"type": "C", "ds": "prn", "value": "US"}],
+      [{"type": "O", "ds": "utf8", "value": "Foo Industries Limited"}],
+      [{"type": "CN", "ds": "utf8", "value": "Root CA"}]
+    ]
+  },
+  "sbjpubkey": "testECCP256.p8.pub",
+  "ext": [
+    {
+      "extname": "basicConstraints",
+      "critical": true,
+      "cA": true
+    },
+    {
+      "extname": "keyUsage",
+      "critical": true,
+      "names": ["digitalSignature", "keyCertSign", "cRLSign"]
+    },
+    {
+      "extname": "authorityKeyIdentifier",
+      "kid": "testECCP256.p8.pub"
+    },
+    {
+      "extname": "subjectKeyIdentifier",
+      "kid": "testECCP256.p8.pub"
+    }
+  ],
+  "cakey": "testECCP256.p5p.prv"
+}

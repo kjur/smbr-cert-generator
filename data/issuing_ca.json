@@ -1,0 +1,64 @@
+{
+  "version": 3,
+  "serial": {"hex": "63ba327006c778af27c99c6e2fded04f3769d06f"},
+  "sigalg": "SHA256withECDSA",
+  "issuer": {
+    "str": "/C=US/O=Foo Industries Limited/CN=Root CA",
+    "array": [
+      [{"type": "C", "ds": "prn", "value": "US"}],
+      [{"type": "O", "ds": "utf8", "value": "Foo Industries Limited"}],
+      [{"type": "CN", "ds": "utf8", "value": "Root CA"}]
+    ]
+  },
+  "notbefore": "230401000000Z",
+  "notafter": "340401000000Z",
+  "subject": {
+    "str": "/C=US/O=Foo Industries Limited/CN=Intermediate CA",
+    "array": [
+      [{"type": "C", "ds": "prn", "value": "US"}],
+      [{"type": "O", "ds": "utf8", "value": "Foo Industries Limited"}],
+      [{"type": "CN", "ds": "utf8", "value": "Intermediate CA"}]
+    ]
+  },
+  "sbjpubkey": "testRSA4096.p8.pub",
+  "ext": [
+    {
+      "extname": "basicConstraints",
+      "critical": true,
+      "cA": true,
+      "pathLen": 0
+    },
+    {
+      "extname": "keyUsage",
+      "critical": true,
+      "names": ["digitalSignature", "keyCertSign", "cRLSign"]
+    },
+    {
+      "extname": "authorityKeyIdentifier",
+      "kid": "testECCP256.p8.pub"
+    },
+    {
+      "extname": "subjectKeyIdentifier",
+      "kid": "testRSA4096.p8.pub"
+    },
+    {
+      "extname": "certificatePolicies",
+      "array": [{"policyoid": "anyPolicy"}]
+    },
+    {
+      "extname": "cRLDistributionPoints",
+      "array": [
+        {"dpname": {"full": [{"uri": "http://crl.ca.example.com/root_ca_crl.crl"}]}}
+      ]
+    },
+    {
+      "extname": "authorityInfoAccess",
+      "array": [{"caissuer": "http://repository.ca.example.com/root_ca.der"}]
+    },
+    {
+      "extname": "extKeyUsage",
+      "array": ["emailProtection", "clientAuth"]
+    }
+  ],
+  "cakey": "testECCP256.p5p.prv"
+}

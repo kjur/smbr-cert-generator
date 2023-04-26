@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "sigalg": "SHA256withECDSA",
+  "issuer": {
+    "str": "/C=US/O=Foo Industries Limited/CN=Root CA",
+    "array": [
+      [{"type": "C", "ds": "prn", "value": "US"}],
+      [{"type": "O", "ds": "utf8", "value": "Foo Industries Limited"}],
+      [{"type": "CN", "ds": "utf8", "value": "Root CA"}]
+    ]
+  },
+  "thisupdate": "230401000000Z",
+  "nextupdate": "340401000000Z",
+  "ext": [
+    {
+      "extname": "cRLNumber",
+      "num": {"hex": "01"}
+    },
+    {
+      "extname": "authorityKeyIdentifier",
+      "kid": "testECCP256.p8.pub"
+    }
+  ],
+  "cakey": "testECCP256.p5p.prv"
+}

@@ -1,0 +1,97 @@
+{
+  "version": 3,
+  "serial": {"hex": "71b2e6c698ab5109853f046a6d8b3fffccaeff8a"},
+  "sigalg": "SHA256withRSA",
+  "issuer": {
+    "str": "/C=US/O=Foo Industries Limited/CN=Intermediate CA",
+    "array": [
+      [{"type": "C", "ds": "prn", "value": "US"}],
+      [{"type": "O", "ds": "utf8", "value": "Foo Industries Limited"}],
+      [{"type": "CN", "ds": "utf8", "value": "Intermediate CA"}]
+    ]
+  },
+  "notbefore": "230401000000Z",
+  "notafter": "250704000000Z",
+  "subject": {
+    "str": "/organizationIdentifier=LEIXG-AEYE00EKXESVZUUEBP67/O=Acme Industries, Ltd./SN=Yamada/GN=Hanako/CN=YAMADA Hanako/E=hanako.yamada@example.com",
+    "array": [
+      [{"type": "organizationIdentifier", "ds": "prn", "value": "LEIXG-AEYE00EKXESVZUUEBP67"}],
+      [{"type": "O", "ds": "prn", "value": "Acme Industries, Ltd."}],
+      [{"type": "SN", "ds": "utf8", "value": "Yamada"}],
+      [{"type": "GN", "ds": "utf8", "value": "Hanako"}],
+      [{"type": "CN", "ds": "utf8", "value": "YAMADA Hanako"}],
+      [{"type": "E", "ds": "ia5", "value": "hanako.yamada@example.com"}]
+    ]
+  },
+  "sbjpubkey": "testRSA2048.p8.pub",
+  "ext": [
+    {
+      "extname": "basicConstraints",
+      "critical": true
+    },
+    {
+      "extname": "keyUsage",
+      "critical": true,
+      "names": ["digitalSignature"]
+    },
+    {
+      "extname": "authorityKeyIdentifier",
+      "kid": "testRSA4096.p8.pub"
+    },
+    {
+      "extname": "subjectKeyIdentifier",
+      "kid": "testRSA2048.p8.pub"
+    },
+    {
+      "extname": "certificatePolicies",
+      "array": [{"policyoid": "smimeSponsorStrict"}]
+    },
+    {
+      "extname": "cRLDistributionPoints",
+      "array": [
+        {"dpname": {"full": [{"uri": "http://crl.ca.example.com/issuing_ca_crl.crl"}]}}
+      ]
+    },
+    {
+      "extname": "authorityInfoAccess",
+      "array": [{"caissuer": "http://repository.ca.example.com/issuing_ca.der"}]
+    },
+    {
+      "extname": "extKeyUsage",
+      "array": ["emailProtection"]
+    },
+    {
+      "extname": "subjectAltName",
+      "array": [
+        {"rfc822": "hanako.yamada@example.com"},
+        {
+          "other": {
+            "oid": "smtpUTF8Mailbox",
+            "value": {"utf8str": {"str": "山田花子@example.com"}}
+          }
+        },
+        {
+          "dn": {
+            "str": "/organizationIdentifier=LEIXG-AEYE00EKXESVZUUEBP67/O=アクミ工業株式会社/SN=山田/GN=花子/CN=山田花子",
+            "array": [
+              [{"type": "organizationIdentifier", "ds": "prn", "value": "LEIXG-AEYE00EKXESVZUUEBP67"}],
+              [{"type": "O", "ds": "utf8", "value": "アクミ工業株式会社"}],
+              [{"type": "SN", "ds": "utf8", "value": "山田"}],
+              [{"type": "GN", "ds": "utf8", "value": "花子"}],
+              [{"type": "CN", "ds": "utf8", "value": "山田花子"}]
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "extname": "1.3.6.1.4.1.52266.1",
+      "extn": "1314414559453030454b584553565a55554542503637"
+    },
+    {
+      "extname": "1.3.6.1.4.1.52266.2",
+      "extn": "130343454f"
+    }
+  ],
+  "cakey": "testRSA4096.p5p.prv"
+}

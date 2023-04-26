@@ -1,0 +1,71 @@
+#!/usr/bin/env node
+
+var rs = require("jsrsasign");
+var rsu = require("jsrsasign-util");
+var fs = require("fs");
+var path = require("path");
+
+const _VERSION = "0.9.2e (2023-Apr-25)";
+const _helpMsg = `
+certjsontopem - generate certificate PEM from jsrsasign certificate configuration JSON file
+
+(example)
+certjsontopem aaa.json aaa.pem
+certjsontopem -h //this help
+(see)
+https://kjur.github.io/jsrsasign/api/symbols/KJUR.asn1.x509.Certificate.html
+https://kjur.github.io/jsrsasign/api/symbols/KJUR.asn1.x509.X509Util.html#.newCertPEM
+
+`
+
+if (process.argv.length < 2 || process.argv[2] == "-h") {
+    console.log(_helpMsg);
+    process.exit(0);
+}
+
+var inFile = process.argv[2];
+var outFile = process.argv[3];
+console.log(`converting ${inFile} to ${outFile} ...`);
+
+var inDir = path.dirname(inFile);
+
+var pCERT = rsu.readJSON(inFile);
+
+if (pCERT.cakey != undefined &&
+    _fileExists(inDir, pCERT.cakey)) {
+    pCERT.cakey = _getContents(inDir, pCERT.cakey);
+}
+if (pCERT.sbjpubkey != undefined &&
+    _fileExists(inDir, pCERT.sbjpubkey)) {
+    pCERT.sbjpubkey = _getContents(inDir, pCERT.sbjpubkey);
+}
+pCERT.ext = pCERT.ext.map(pExt => {
+    if ((pExt.extname == "subjectKeyIdentifier" ||
+	 pExt.extname == "authorityKeyIdentifier") &&
+	_fileExists(inDir, pExt.kid)) {
+	pExt.kid = _getContents(inDir, pExt.kid);
+	return pExt;
+    } else {
+	return pExt;
+    }
+});
+
+//rsu.printJSON(pCERT);
+
+var pem = new rs.KJUR.asn1.x509.Certificate(pCERT).getPEM();
+//console.log(pem);
+rsu.saveFileUTF8(outFile, pem);
+
+function _fileExists(dir, file) {
+    var filePath = path.format({dir: dir, base: file});
+    return fs.existsSync(filePath);
+}
+
+function _getContents(dir, file) {
+    try {
+	var filePath = path.format({dir: dir, base: file});
+	return rsu.readFileUTF8(filePath);
+    } catch(ex) {
+	throw new Error(`can't read file: ${dir}/${file}`);
+    }
+}
