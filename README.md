@@ -138,6 +138,7 @@ IssuingCA --|> EndEntities
 ## Sample Certificate Field Difference Table
 Difference among S/MIME BR sample certificates is shown in the following table:
 |Field|Mailbox|||Organization|||Sponsored|||Individual|||
+||Strict|Multi|Legacy|Strict|Multi|Legacy|Strict|Multi|Legacy|Strict|Multi|Legacy|
 |-------|-|-|-|-|-|-|-|-|-|-|-|-|
 |Subject E|o|o|o|o|o|o|o|o|o|o|o|o|
 |Subject CN|email|email|email|-|-|-|fullname|fullname|fullname|fullname|fullname|fullname|
