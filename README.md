@@ -5,6 +5,9 @@ This project provides generator for certificates and CRLs conforming to CA/Brows
 
 Certificates and CRLs will be generated using pure JavaScript [jsrsasign](https://github.com/kjur/jsrsasign) PKI library.
 
+## Requirements
+Generator scripts requires Node.JS and /bin/sh.
+
 ## How to generate certificates and CRLs
 
 Download the package from [here](https://github.com/kjur/smbr-cert-generator/archive/refs/heads/main.zip). Then run following:
