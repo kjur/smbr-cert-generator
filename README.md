@@ -140,8 +140,28 @@ Difference among S/MIME BR sample certificates is shown in the following table:
 |Field|Mailbox|||Organization|||Sponsored|||Individual|||
 |-------|-|-|-|-|-|-|-|-|-|-|-|-|
 |Subject E|o|o|o|o|o|o|o|o|o|o|o|o|
-
-TBD.
+|Subject CN|email|email|email|-|-|-|fullname|fullname|fullname|fullname|fullname|fullname|
+|Subject SN|-|-|-|-|-|-|o|o|o|o|o|-|
+|Subject GN|-|-|-|-|-|-|o|o|o|o|o|-|
+|Subject O|-|-|-|o|o|o|o|o|o|-|-|-|
+|Subject organizationIdentifier|-|-|-|o|o|o|o|o|o|-|-|-|
+|Subject Other(DC)|-|-|-|-|-|o|-|-|o|-|-|o|
+|Certificate Policies|specific|specific|specific|specific|specific|specific|specific|specific|specific|specific|specific|specific|
+|EKU emailProtection|o|o|o|o|o|o|o|o|o|o|o|o|
+|EKU clientAuth|-|o|o|-|o|o|-|o|o|-|o|o|
+|CRLDistributionPoints HTTP|o|o|o|o|o|o|o|o|o|o|o|o|
+|CRLDistributionPoints LDAP|-|-|o|-|-|o|-|-|o|-|-|o|
+|SAN RFC822|o|o|o|o|o|o|o|o|o|o|o|o|
+|SAN Other smtpUTF8Mbox|o|o|o|o|o|o|o|o|o|o|o|o|
+|SAN Other UPN|-|o|o|-|-|o|-|o|o|-|o|o|
+|SAN DN CN|-|-|-|-|-|-|fullname|fullname|fullname|fullname|fullname|fullname|
+|SAN DN SN|-|-|-|-|-|-|o|o|o|o|o|-|
+|SAN DN GN|-|-|-|-|-|-|o|o|o|o|o|-|
+|SAN DN O|-|-|-|o|o|o|o|o|o|-|-|-|
+|SAN DN organizationIdentifier|-|-|-|o|o|o|o|o|o|-|-|-|
+|LEI|-|-|-|-|-|-|o|o|o|-|-|-|
+|Role|-|-|-|-|-|-|o|o|o|-|-|-|
+|SubjectDirectoryAttributes|-|-|o|-|-|o|-|-|o|-|-|o|
 
 ## View Generated Certificates
 
