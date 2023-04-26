@@ -1,12 +1,12 @@
 # S/MIME Baseline Requirements Sample Certificate Generator by jsrsasign
 
 ## Overview
-This project provides generator for certificates and CRLs conforming to CA/Browser Forum S/MIME Baseline Requirements inspired by [smbr-cert-factory](https://github.com/digicert/smbr-cert-factory) project.
+This project provides generator for certificates and CRLs conforming to [CA/Browser Forum S/MIME Baseline Requirements](https://cabforum.org/smime-br/) inspired by [smbr-cert-factory](https://github.com/digicert/smbr-cert-factory) project.
 
 Certificates and CRLs will be generated using pure JavaScript [jsrsasign](https://github.com/kjur/jsrsasign) PKI library.
 
 ## Requirements
-Generator scripts requires Node.JS and /bin/sh.
+Generator scripts requires [Node.JS](https://nodejs.org/) and `/bin/sh`.
 
 ## How to generate certificates and CRLs
 
@@ -18,10 +18,10 @@ Download the package from [here](https://github.com/kjur/smbr-cert-generator/arc
 % npm install jsrsasign jsrsasign-util
 % sh ./makecert.sh
 ```
-You can see generated certificates and CRLs in `../artifacts` directory.
+You can see generated certificates and CRLs in [`../artifacts`](https://github.com/kjur/smbr-cert-generator/tree/main/artifacts) directory.
 
 ## Certificate and CRL Customization
-All of certificate and CRL parameters are defined as JSON in data directory. So you can modify and add them such as validity period, names, mail addresses or extensions. Here is a `data/mailbox-validated_strict.json`:
+All of certificate and CRL parameters are defined as JSON in data directory. So you can modify and add them such as validity period, names, mail addresses or extensions. Here is a [`data/mailbox-validated_strict.json`](https://github.com/kjur/smbr-cert-generator/blob/main/data/mailbox-validated_strict.json):
 
 ```JavaScript
 {
