@@ -11,7 +11,7 @@
     ]
   },
   "notbefore": "230401000000Z",
-  "notafter": "250704000000Z",
+  "notafter": "250703235959Z",
   "subject": {
     "str": "/organizationIdentifier=LEIXG-AEYE00EKXESVZUUEBP67/O=Acme Industries, Ltd./E=hanako.yamada@example.com",
     "array": [

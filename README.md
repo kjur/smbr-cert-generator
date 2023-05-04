@@ -100,7 +100,7 @@ All of certificate and CRL parameters are defined as JSON in data directory. So 
 ```
 
 ## Private and Public Keys
-All of private key are defined in the [IETF Internet-Draft Standard PKC Test Keys](https://www.ietf.org/archive/id/draft-gutmann-testkeys-03.html) and their files are store in `data` directory.
+All of private key are defined in the [IETF Internet-Draft Standard PKC Test Keys](https://www.ietf.org/archive/id/draft-gutmann-testkeys-03.html) and their files are stored in `data` directory.
 
 - [testECCP256.p5p.prv](https://github.com/kjur/smbr-cert-generator/blob/main/data/testECCP256.p5p.prv): PKCS#1 PEM EC P-256 curve private key (Root CA)
 - [testECCP256.p8.pub](https://github.com/kjur/smbr-cert-generator/blob/main/data/testECCP256.p8.pub): PKCS#8 PEM EC P-256 curve public key

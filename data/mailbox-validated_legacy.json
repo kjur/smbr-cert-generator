@@ -11,7 +11,7 @@
     ]
   },
   "notbefore": "230401000000Z",
-  "notafter": "250704000000Z",
+  "notafter": "260628235959Z",
   "subject": {
     "str": "/CN=hanako.yamada@example.com/E=hanako.yamada@example.com",
     "array": [
