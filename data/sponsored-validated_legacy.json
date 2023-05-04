@@ -52,7 +52,7 @@
       "extname": "cRLDistributionPoints",
       "array": [
         {"dpname": {"full": [{"uri": "http://crl.ca.example.com/issuing_ca_crl.crl"}]}},
-        {"dpname": {"full": [{"uri": "ldap:///CN=ICA,O=FooLtd?certificateRevocationList?base?objectClass=cRLDistributionPoint"}]}}
+        {"dpname": {"full": [{"uri": "ldap://ldap.example.com/CN=ICA,O=FooLtd?certificateRevocationList?base?objectClass=cRLDistributionPoint"}]}}
       ]
     },
     {
