@@ -17,8 +17,8 @@
     "array": [
       [{"type": "organizationIdentifier", "ds": "prn", "value": "LEIXG-AEYE00EKXESVZUUEBP67"}],
       [{"type": "O", "ds": "prn", "value": "Acme Industries, Ltd."}],
-      [{"type": "DC", "ds": "prn", "value": "com"}],
-      [{"type": "DC", "ds": "prn", "value": "example"}],
+      [{"type": "DC", "ds": "ia5", "value": "com"}],
+      [{"type": "DC", "ds": "ia5", "value": "example"}],
       [{"type": "SN", "ds": "utf8", "value": "Yamada"}],
       [{"type": "GN", "ds": "utf8", "value": "Hanako"}],
       [{"type": "CN", "ds": "utf8", "value": "YAMADA Hanako"}],

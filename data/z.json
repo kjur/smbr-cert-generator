@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "serial": {"hex": "1d05db3dfef1f52249f1423da1f55c2689dfb71b"},
+  "serial": {"hex": "04a743566e0ac50e2eecfbbd39ed661821b2494a"},
   "sigalg": "SHA256withRSA",
   "issuer": {
     "str": "/C=US/O=Foo Industries Limited/CN=Intermediate CA",
@@ -11,14 +11,17 @@
     ]
   },
   "notbefore": "230401000000Z",
-  "notafter": "250703235959Z",
+  "notafter": "260628235959Z",
   "subject": {
-    "str": "/organizationIdentifier=LEIXG-AEYE00EKXESVZUUEBP67/O=Acme Industries, Ltd./E=hanako.yamada@example.com",
+    "str": "/organizationIdentifier=LEIXG-AEYE00EKXESVZUUEBP67/O=Acme Industries, Ltd./SN=Yamada/GN=Hanako/CN=YAMADA Hanako/E=hanako.yamada@example.com",
     "array": [
       [{"type": "organizationIdentifier", "ds": "prn", "value": "LEIXG-AEYE00EKXESVZUUEBP67"}],
       [{"type": "O", "ds": "prn", "value": "Acme Industries, Ltd."}],
-      [{"type": "DC", "ds": "ia5", "value": "com"}],
-      [{"type": "DC", "ds": "ia5", "value": "example"}],
+      [{"type": "DC", "ds": "prn", "value": "com"}],
+      [{"type": "DC", "ds": "prn", "value": "example"}],
+      [{"type": "SN", "ds": "utf8", "value": "Yamada"}],
+      [{"type": "GN", "ds": "utf8", "value": "Hanako"}],
+      [{"type": "CN", "ds": "utf8", "value": "YAMADA Hanako"}],
       [{"type": "E", "ds": "ia5", "value": "hanako.yamada@example.com"}]
     ]
   },
@@ -31,7 +34,7 @@
     {
       "extname": "keyUsage",
       "critical": true,
-      "names": ["digitalSignature", "nonRepudiation", "keyEncipherment", "dataEncipherment"]
+      "names": ["digitalSignature"]
     },
     {
       "extname": "authorityKeyIdentifier",
@@ -43,13 +46,12 @@
     },
     {
       "extname": "certificatePolicies",
-      "array": [{"policyoid": "smimeOrganizationLegacy"}]
+      "array": [{"policyoid": "smimeSponsorLegacy"}]
     },
     {
       "extname": "cRLDistributionPoints",
       "array": [
-        {"dpname": {"full": [{"uri": "http://crl.ca.example.com/issuing_ca_crl.crl"}]}},
-        {"dpname": {"full": [{"uri": "ldap://ldap.example.com/CN=ICA,O=FooLtd?certificateRevocationList?base?objectClass=cRLDistributionPoint"}]}}
+        {"dpname": {"full": [{"uri": "http://crl.ca.example.com/issuing_ca_crl.crl"}]}}
       ]
     },
     {
@@ -78,10 +80,13 @@
         },
         {
           "dn": {
-            "str": "/organizationIdentifier=LEIXG-AEYE00EKXESVZUUEBP67/O=アクミ工業株式会社",
+            "str": "/organizationIdentifier=LEIXG-AEYE00EKXESVZUUEBP67/O=アクミ工業株式会社/SN=山田/GN=花子/CN=山田花子",
             "array": [
               [{"type": "organizationIdentifier", "ds": "prn", "value": "LEIXG-AEYE00EKXESVZUUEBP67"}],
-              [{"type": "O", "ds": "utf8", "value": "アクミ工業株式会社"}]
+              [{"type": "O", "ds": "utf8", "value": "アクミ工業株式会社"}],
+              [{"type": "SN", "ds": "utf8", "value": "山田"}],
+              [{"type": "GN", "ds": "utf8", "value": "花子"}],
+              [{"type": "CN", "ds": "utf8", "value": "山田花子"}]
             ]
           }
         }
@@ -92,8 +97,8 @@
       "extn": "1314414559453030454b584553565a55554542503637"
     },
     {
-      "extname": "subjectDirectoryAttributes",
-      "array": [{"attr": "gender", "str": "F"}]
+      "extname": "1.3.6.1.4.1.52266.2",
+      "extn": "130343454f"
     }
   ],
   "cakey": "testRSA4096.p5p.prv"
